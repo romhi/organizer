@@ -1,4 +1,4 @@
-root = "/home/deployer/apps/puheet/current"
+root = "/home/deployer/apps/organizer/current"
 working_directory root
 
 pid "#{root}/tmp/pids/unicorn.pid"
