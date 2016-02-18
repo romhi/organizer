@@ -39,6 +39,7 @@ group :development do
   gem "capistrano", "~> 3.4"
   gem "capistrano-rails"
   gem 'rvm1-capistrano3', require: false
+  gem 'capistrano3-unicorn'
 end
 
 group :development, :test do

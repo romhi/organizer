@@ -142,6 +142,7 @@
     <orderEntry type="library" scope="PROVIDED" name="capistrano (v3.4.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-bundler (v1.1.4, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-rails (v1.1.6, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="capistrano3-unicorn (v0.2.1, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.1.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.3.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.9.1, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
