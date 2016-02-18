@@ -1,3 +1,4 @@
+root = "/home/deployer/apps/puheet/current"
 working_directory root
 
 pid "#{root}/tmp/pids/unicorn.pid"
@@ -9,7 +10,7 @@ worker_processes Integer(ENV['WEB_CONCURRENCY'] || 2)
 timeout 30
 preload_app true
 
-listen "/home/deployer/apps/puheet/current/tmp/sockets/unicorn.puheet.sock", :backlog => 64
+listen "/home/deployer/apps/organizer/current/tmp/sockets/unicorn.organizer.sock", :backlog => 64
 # listen '/tmp/unicorn.puheet.sock', backlog: 64
 
 before_fork do |server, worker|
