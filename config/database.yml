@@ -1,21 +1,21 @@
-
-development:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  host: 127.0.0.1
-  port: 4444
-  database: organizer
-  username: app
-  password: Dontworry25114
 #
 #development:
 #  adapter: postgresql
 #  encoding: unicode
 #  pool: 5
 #  host: 127.0.0.1
-#  port: 5432
+#  port: 4444
 #  database: organizer
 #  username: app
 #  password: Dontworry25114
+#
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: 127.0.0.1
+  port: 5432
+  database: organizer
+  username: app
+  password: Dontworry25114
 

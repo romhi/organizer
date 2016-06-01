@@ -26,6 +26,7 @@ gem 'haml', '~> 4.0.5'
 gem 'country_select'
 gem 'sass-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
