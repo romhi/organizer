@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get 'pages_controller/index'
 
   # devise_for :devise, controllers: {sessions: 'users/sessions' }
   # devise_for :users do
@@ -11,14 +10,14 @@ Rails.application.routes.draw do
   #   get "logout" => "devise/sessions#destroy", :as => :destroy_user_session
   #   get "register" => "devise/registrations#new", :as => :new_user_registration
   # end
-  get 'welcome/index'
-
+  resources :cities
+  resources :pages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: 'pages#index'
-  resources :cities
+  root to: 'welcome#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
