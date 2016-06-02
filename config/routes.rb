@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { sessions: 'users/sessions' }
-  # devise_scope :user do
+  # devise_for :devise, controllers: {sessions: 'users/sessions' }
+  # devise_for :users do
   #   get "login" => "devise/sessions#new", :as => :new_user_session
   #   get "signin" => "devise/sessions#new"
   #   post "signin" => "devise/sessions#create", :as => :user_session
   #   get "logout" => "devise/sessions#destroy", :as => :destroy_user_session
   #   get "register" => "devise/registrations#new", :as => :new_user_registration
   # end
-  # devise_for :users
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta(charset="utf-8")
+    %title
+      Organizer
+    = stylesheet_link_tag    'admin.scc.sass', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    %body
+      = yield
