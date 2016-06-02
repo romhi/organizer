@@ -12,6 +12,9 @@
     <div class="navbar-header">
       <%= link_to 'Devise Demo', root_path, class: 'navbar-brand' %>
     </div>
+    <div class="navbar-header">
+      <%= link_to 'Города', cities_path, class: 'navbar-brand' %>
+    </div>
     <div id="navbar">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Home', root_path %></li>
@@ -45,8 +48,7 @@
 </div>
 
 <%= yield :top_content %>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
 <div class="container">
   <h1><%= yield :header %></h1>
   <%= yield %>

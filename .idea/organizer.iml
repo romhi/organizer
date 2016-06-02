@@ -132,7 +132,6 @@
     <orderEntry type="library" scope="PROVIDED" name="bootstrap-sass (v3.3.4.1, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.2, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.11.2, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="byebug (v4.0.3, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano (v3.4.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-bundler (v1.1.4, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="capistrano-rails (v1.1.6, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
@@ -140,7 +139,6 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-rails (v4.1.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.3.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.9.1, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="columnize (v0.9.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="countries (v0.11.2, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="country_select (v2.2.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="currencies (v0.4.2, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
@@ -155,6 +153,7 @@
     <orderEntry type="library" scope="PROVIDED" name="i18n_data (v0.6.2, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.2.12, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jquery-rails (v4.0.3, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jquery-turbolinks (v2.1.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v1.8.2, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kgio (v2.10.0, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="libv8 (v3.16.14.7, RVM: ruby-2.2.1 [organizer]) [gem]" level="application" />
