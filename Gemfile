@@ -27,6 +27,7 @@ gem 'country_select'
 gem 'sass-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'devise'
+gem "cancan"
 gem 'jquery-turbolinks'
 
 # Use ActiveModel has_secure_password

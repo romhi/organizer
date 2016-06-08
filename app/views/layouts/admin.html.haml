@@ -2,12 +2,17 @@
 %html
   %head
     %meta(charset="utf-8")
-    %title
-      Organizer
-    = stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %title romhi
+    = stylesheet_link_tag    'admin', media: 'all'
+    = javascript_include_tag 'application'
+    = favicon_link_tag 'favicon.png'
     = csrf_meta_tags
-
-    %body
-      Админ
-      = yield
+  %body.yellow
+    = render partial: 'layouts/main_menu'
+    -#= render partial: 'shared/top_bar'
+    -#= render partial: 'shared/flash_messages'
+    -#= render partial: 'shared/layout_js'
+    .container
+      .page-content
+        = render partial: "layouts/flash_messages"
+        = yield
