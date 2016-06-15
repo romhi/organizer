@@ -16,4 +16,6 @@
 //= require bootstrap-sprockets
 //= require bootstrap/dropdown
 //= require turbolinks
+//= require maskedinput
 //= require_tree .
+

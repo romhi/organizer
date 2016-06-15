@@ -31,6 +31,8 @@ gem 'devise'
 gem "cancan"
 gem 'jquery-turbolinks'
 gem 'will_paginate-bootstrap'
+gem "font-awesome-rails", '4.2.0.0'
+gem 'maskedinput-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
