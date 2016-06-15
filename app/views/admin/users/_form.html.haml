@@ -1,0 +1,21 @@
+= simple_form_for [:admin, @user], :html => { :id => "user_form", :class => 'form-horizontal', :role => "form" },
+  wrapper: :horizontal_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean: :horizontal_boolean } do |f|
+  = f.input :nick_name, label: "Ник"
+  = f.input :login, label: "Логин"
+  = f.input :email, label: "Почта"
+  = f.input :phone, label: "Телефон"
+  -#= f.input :send_confirmation, label: "Отправить уведомление об активации", as: :boolean
+  = f.input :generate_pass, label: "Сгенерировать пароль", as: :boolean
+  = f.input :password, label: "Пароль"
+  = f.input :password_confirmation, label: "Подтверждение пароль"
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit "Сохранить", class: "btn btn-primary"
+      = link_to "Отмена", admin_users_path, class: "btn btn-default"
+
+
+:javascript
+
+  $(document).ready(function(){
+    $("#user_phone").mask("(999) 999-9999");
+  });
