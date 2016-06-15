@@ -9097,36 +9097,36 @@ button.close {
  *
  *
  */
-/* line 19, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
-.grey {
-  background-color: lightgrey;
+/* line 20, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
+.yellow {
+  background-color: yellow;
   margin-top: 50px;
 }
 
-/* line 23, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
+/* line 24, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
 .devise-shared-links {
   padding-top: 15px;
 }
 
-/* line 26, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
+/* line 27, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
 .form-notes {
   color: firebrick;
   font-weight: bold;
 }
 
-/* line 30, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
+/* line 31, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
 .checkbox-group {
   align-items: center;
   display: flex;
   margin-left: 115px;
 }
 
-/* line 35, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
+/* line 36, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
 .checkbox-group .checkbox {
   padding-top: 0;
 }
 
-/* line 38, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
+/* line 39, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
 .checkbox-group input {
   margin-top: 2px;
 }
