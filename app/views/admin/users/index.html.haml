@@ -1,1 +1,70 @@
-%h1 Пользователи #{@users.all.count}
+.top-right-actions
+  = bootstrap_form_for :user, url: "/admin/users", method: :get, html: { style: "display: inline-block; margin-right: 30px", class: "form-inline" } do |f|
+    = f.text_field :part, hide_label: true, input_html: { name: "part", value: "#{params[:part]}" }
+    = f.submit "Найти"
+  = link_to "Добавить", new_admin_user_path, class: "btn btn-primary"
+
+%h1 Пользователи (#{@users.count})
+
+%table.table.table-bordered
+  %tr
+    %th.td-18
+    %th.td-18
+      ID
+    %th
+      Роли
+    %th
+      Фамилия
+    %th
+      Имя
+    %th
+      Возраст
+    %th
+      Назначение
+    %th
+      Почта
+    %th
+      Телефон
+    %th
+      Город
+    %th
+      Собрание
+    %th.td-18
+      = content_tag(:span, "АК", title: "Пользователь прошел активацию")
+    %th.td-18
+
+
+  - for user in @users do
+    %tr
+      %td
+        = edit_link [:edit,:admin , user]
+      %td
+        = user.id
+      %td
+        роль
+      %td
+        = user.last_name
+      %td
+        = user.first_name
+      %td
+        = user.age
+      %td
+        = user.responsibility_id
+      %td.td-center
+        = user.email
+      %td
+        = user.phone
+      %td
+        = user.city_id
+      %td
+        = user.congregation_id
+      %td
+        - if user.confirmed_at
+          = content_tag(:i, "", class: "fa fa-check-square pointer", title: "Пользователь прошел активацию")
+        - else
+          = content_tag(:i, "", class: "fa fa-clock-o pointer", title: "Пользователь ожидает активации")
+      %td
+        = delete_link [:admin, user]
+
+
+= will_paginate @users, :renderer => BootstrapPagination::Rails
