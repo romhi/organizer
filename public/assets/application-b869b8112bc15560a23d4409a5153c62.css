@@ -9098,8 +9098,8 @@ button.close {
  *
  */
 /* line 19, /home/roman/apps/organizer/app/assets/stylesheets/admin.sass */
-.yellow {
-  background-color: yellow;
+.grey {
+  background-color: lightgrey;
   margin-top: 50px;
 }
 
