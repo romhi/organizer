@@ -1,22 +1,23 @@
 %h2
   Редактировать мои регистрационные данные
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
+= bootstrap_form_for(resource, as: resource_name,  layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-6", url: registration_path(resource_name), html: { method: :put }) do |f|
   .form-inputs
-    = f.input :email, label: "Email", required: true, autofocus: true
-    = f.input :first_name, label: "Имя", required: true
-    = f.input :last_name, label: "Фамилия", required: true
-    = f.input :age, label: "Возраст", required: true
-    = f.input :phone, label: "Телефон", required: true
+    = f.email_field :email, label: "Email", required: true, autofocus: true
+    = f.text_field :first_name, label: "Имя", required: true
+    = f.text_field :last_name, label: "Фамилия", required: true
+    = f.number_field :age, label: "Возраст", required: true
+    = f.telephone_field :phone, label: "Телефон", required: true
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %p
         Currently waiting confirmation for: #{resource.unconfirmed_email}
-    = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
-    = f.input :password_confirmation, required: false
-    = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
-  .form-actions
-    = f.button :submit, "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+    = f.password_field :password, autocomplete: "off", help: "Пропустите поле, если не хотите его изменить", required: false
+    = f.password_field :password_confirmation, help: "Пропустите поле, если не хотите его изменить", required: false
+    = f.password_field :current_password, help: "Введите пароль, чтобы изменения вступили в силу", required: true
+    = f.form_group do
+      = f.primary  "Обновить"
+.form-group
+  .col-sm-offset-3.col-sm-10
+    %h3 Удалить мой аккаунт
+    %p
+      Unhappy? #{link_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+    = link_to "Вернуться", root_path, class: "btn btn-default"
