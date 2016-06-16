@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
+    resources :regions
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
