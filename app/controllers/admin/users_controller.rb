@@ -1,6 +1,7 @@
 class Admin::UsersController < ApplicationController
 
   before_filter :authenticate_user!
+  authorize_resource
 
   before_filter :load_model, only: [:edit, :show, :update, :destroy]
 
