@@ -1,0 +1,9 @@
+= simple_form_for [:admin, @congregation], :html => { class: 'form-horizontal' } do |f|
+  = f.input :city_id, label: "Город"
+  = f.input :name, label: "Наименование"
+  = f.input :number, label: "Номер"
+
+  .form-group.form-actions
+    .col-sm-offset-3.col-sm-9
+      = f.button :submit, "Сохранить", class: 'btn btn-primary'
+      = link_to "Отмена", admin_congregations_path, class: "btn btn-default"
