@@ -4,9 +4,12 @@
       Регистрация
     .panel-body
       = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), validate: true, html: { class: "vertical_form", autocomplete: "off", role: "form" } ) do |f|
-        = f.input :first_name, label: "ФИО", required: true
+        = f.input :last_name, label: "Фамилия", required: true
+        = f.input :first_name, label: "Имя", required: true
         = f.input :email, label: "Email", required: true
         = f.input :phone, label: "Телефон", required: true
+        = f.input :password, label: "Пароль", required: true
+        = f.input :password_confirmation, label: "Повторить пароль", required: true
         = f.submit 'Регистрация', :id => "submit_button", :class => "btn btn-primary"
     .panel-footer
       = render "devise/shared/links"

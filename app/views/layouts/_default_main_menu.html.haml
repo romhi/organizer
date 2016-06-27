@@ -6,13 +6,6 @@
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
         - if user_signed_in?
-          -if current_user.admin?
-            %li.dropdown
-              = link_to "#", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
-                Админ
-                %b.caret
-              %ul.dropdown-menu
-                %li= link_to "Пользователи", admin_users_path
           %li.dropdown
             = link_to "#", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
               Справочники

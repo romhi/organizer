@@ -14,5 +14,6 @@
     -#= render partial: 'shared/layout_js'
     .container
       .page-content
-        = render partial: "layouts/flash_messages"
-        = yield
+        .admin
+          = render partial: "layouts/flash_messages"
+          = yield
