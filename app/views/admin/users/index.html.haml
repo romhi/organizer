@@ -1,7 +1,7 @@
 .top-right-actions
-  = bootstrap_form_for :user, url: "/admin/users", method: :get, html: { style: "display: inline-block; margin-right: 30px", class: "form-inline" } do |f|
-    = f.text_field :part, hide_label: true, input_html: { name: "part", value: "#{params[:part]}" }
-    = f.submit "Найти"
+  = simple_form_for :user, url: "/admin/users", method: :get, html: { style: "display: inline-block;", class: "form-inline" } do |f|
+    = f.input :part, label: false, input_html: { name: "part", value: "#{params[:part]}" }
+    = f.submit "Найти", class: "btn btn-default"
   = link_to "Добавить", new_admin_user_path, class: "btn btn-primary"
 
 %h1 Пользователи (#{@users.count})

@@ -1,19 +1,13 @@
 %h1 Редактирование пользователя
 
 = simple_form_for [:admin, @user], :html => { :id => "user_form", :class => 'form-horizontal', :role => "form", autocomplete: "off" } do |f|
-  = f.input :last_name, label: "Ник"
-  = f.input :first_name, label: "Логин"
+  = f.input :last_name, label: "Фамилия"
+  = f.input :first_name, label: "Имя"
   = f.input :email, label: "Почта"
-  = f.input :phone, label: "Возраст"
+  = f.input :age, label: "Возраст"
+  = f.input :congregation_id, label: "Собрание"
+  = f.input :responsibility_id, label: "Назначение"
   = f.input :phone, label: "Телефон"
-  = f.input :phone, label: "Телефон"
-  = f.input :phone, label: "Телефон"
-  = f.input :phone, label: "Телефон"
-  = f.input :phone, label: "Телефон"
-  -#= f.input :send_confirmation, label: "Отправить уведомление об активации", as: :boolean
-  -#= f.input :generate_pass, label: "Сгенерировать пароль", as: :boolean, input_html: { value: nil }
-  = f.input :password, label: "Пароль"
-  = f.input :password_confirmation, label: "Подтверждение пароль"
   .form-group
     .col-sm-offset-3.col-sm-9
       = f.submit "Сохранить", class: "btn btn-primary"

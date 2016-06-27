@@ -1,21 +1,23 @@
 %h2
   Редактировать мои регистрационные данные
-= simple_form_for(resource, as: resource_name,  layout: :horizontal, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = f.input :email, label: "Email", required: true, autofocus: true
-  = f.input :first_name, label: "Имя", required: true
-  = f.input :last_name, label: "Фамилия", required: true
-  = f.input :age, label: "Возраст", required: true
-  = f.input :phone, label: "Телефон", required: true
-  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-    %p
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
-  = f.input :password, autocomplete: "off", help: "Пропустите поле, если не хотите его изменить", required: false
-  = f.input :password_confirmation, help: "Пропустите поле, если не хотите его изменить", required: false
-  = f.input :current_password, help: "Введите пароль, чтобы изменения вступили в силу", required: true
-  = f.submit "Обновить"
 .form-group
-  .col-sm-offset-3.col-sm-10
+  .col-sm-offset-2.col-sm-8
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = f.input :email, label: "Email", required: true, autofocus: true
+      = f.input :first_name, label: "Имя", required: true
+      = f.input :last_name, label: "Фамилия", required: true
+      = f.input :age, label: "Возраст", required: true
+      = f.input :phone, label: "Телефон", required: true
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %p
+          Currently waiting confirmation for: #{resource.unconfirmed_email}
+      = f.input :password, autocomplete: "off", help: "Пропустите поле, если не хотите его изменить", required: false
+      = f.input :password_confirmation, help: "Пропустите поле, если не хотите его изменить", required: false
+      = f.input :current_password, help: "Введите пароль, чтобы изменения вступили в силу", required: true
+      = f.submit "Обновить", class: "btn btn-primary"
+      = link_to "Вернуться", root_path, class: "btn btn-default"
+.form-group
+  .col-sm-offset-2.col-sm-8
     %h3 Удалить мой аккаунт
     %p
-      Unhappy? #{link_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-    = link_to "Вернуться", root_path, class: "btn btn-default"
+      Не довольны сайтом? #{link_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
