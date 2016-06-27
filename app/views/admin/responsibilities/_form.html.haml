@@ -1,0 +1,7 @@
+= simple_form_for [:admin, @responsibility], :html => { class: 'form-horizontal' } do |f|
+  = f.input :name, label: "Наименование", autofocus: true
+
+  .form-group.form-actions
+    .col-sm-offset-3.col-sm-9
+      = f.button :submit, "Сохранить", class: 'btn btn-primary'
+      = link_to "Отмена", admin_responsibilities_path, class: "btn btn-default"

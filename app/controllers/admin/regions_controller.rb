@@ -44,8 +44,8 @@ class Admin::RegionsController < ApplicationController
     @region = Region.find params[:id]
   end
 
-  def store_params
-    params.require(:store).permit(:name, :address, :comments)
+  def region_params
+    params.require(:region).permit(:name)
   end
 
 end

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :regions
+    resources :responsibilities
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
