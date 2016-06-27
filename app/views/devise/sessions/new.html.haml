@@ -1,12 +1,13 @@
-%h1
-  Вход
-%div
-  = bootstrap_form_for(resource, :as => resource_name, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-6", :url => session_path(resource_name), :html => {class: "form-horizontal", role: "form" }) do |f|
-    = f.email_field :email, label: "E-mail", input_html: {autofocus: true}
-    = f.password_field :password, label: "Пароль"
-    = f.form_group do
-      = f.check_box :remember_me, label: "Запомнить меня", as: :boolean if devise_mapping.rememberable?
-      = f.primary "Войти"
-.form-group
-  .col-sm-offset-3.col-sm-8
-    = render "devise/shared/links"
+%div(style="width: 600px; margin: 100px auto")
+  .panel.panel-info
+    .panel-heading
+      Вход
+    .panel-body
+      = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { id: "dealer_form", class: "vertical_form", role: "form" }) do |f|
+        = f.input :email, label: "E-mail", input_html: {autofocus: true}
+        = f.input :password, label: "Пароль"
+        = f.input :remember_me, label: "Запомнить меня", as: :boolean, input_html: { style: "width: 16px" } if devise_mapping.rememberable?
+        .col-sm-offset-3.col-sm-9
+          = f.submit "Войти", :class => "btn btn-primary"
+    .panel-footer
+      = render "devise/shared/links"

@@ -21,8 +21,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'simple_form'
-gem 'bootstrap_form'
+gem 'simple_form', '>= 3.1.0.rc1'
+gem 'simple_form-bootstrap'
 gem 'haml', '~> 4.0.5'
 gem 'country_select'
 gem 'sass-rails'

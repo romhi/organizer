@@ -1,19 +1,19 @@
 %h1 Редактирование пользователя
 
-= bootstrap_form_for [:admin, @user], :html => { :id => "user_form", :class => 'form-horizontal', :role => "form", autocomplete: "off" } do |f|
-  = f.text_field :last_name, label: "Ник"
-  = f.text_field :first_name, label: "Логин"
-  = f.email_field :email, label: "Почта"
-  = f.number_field :phone, label: "Возраст"
-  = f.telephone_field :phone, label: "Телефон"
-  = f.telephone_field :phone, label: "Телефон"
-  = f.telephone_field :phone, label: "Телефон"
-  = f.telephone_field :phone, label: "Телефон"
-  = f.telephone_field :phone, label: "Телефон"
+= simple_form_for [:admin, @user], :html => { :id => "user_form", :class => 'form-horizontal', :role => "form", autocomplete: "off" } do |f|
+  = f.input :last_name, label: "Ник"
+  = f.input :first_name, label: "Логин"
+  = f.input :email, label: "Почта"
+  = f.input :phone, label: "Возраст"
+  = f.input :phone, label: "Телефон"
+  = f.input :phone, label: "Телефон"
+  = f.input :phone, label: "Телефон"
+  = f.input :phone, label: "Телефон"
+  = f.input :phone, label: "Телефон"
   -#= f.input :send_confirmation, label: "Отправить уведомление об активации", as: :boolean
-  = f.password_field :generate_pass, label: "Сгенерировать пароль", as: :boolean, input_html: { value: nil }
-  = f.password_field :password, label: "Пароль"
-  = f.password_field :password_confirmation, label: "Подтверждение пароль"
+  -#= f.input :generate_pass, label: "Сгенерировать пароль", as: :boolean, input_html: { value: nil }
+  = f.input :password, label: "Пароль"
+  = f.input :password_confirmation, label: "Подтверждение пароль"
   .form-group
     .col-sm-offset-3.col-sm-9
       = f.submit "Сохранить", class: "btn btn-primary"
