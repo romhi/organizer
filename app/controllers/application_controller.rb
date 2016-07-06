@@ -24,7 +24,13 @@ class ApplicationController < ActionController::Base
   end
 
   def select_by_role
-    current_user.try(:admin) ? "admin" : "application"
+    if current_user.try(:admin)
+      "admin"
+    elsif current_user.try(:manager).to_i == 1
+      "manager"
+    else
+      "application"
+    end
   end
 
 end
