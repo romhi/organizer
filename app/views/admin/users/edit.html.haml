@@ -8,6 +8,7 @@
   = f.input :congregation_id, label: "Собрание", collection: Congregation.order(:name), label_method: :name, value_mathod: :id, include_blank: false
   = f.input :responsibility_id, label: "Назначение", collection: Responsibility.order(:name), label_method: :name, value_mathod: :id, include_blank: false
   = f.input :phone, label: "Телефон"
+  = f.input :manager, label: "Менеджер", as: :boolean
   .form-group
     .col-sm-offset-3.col-sm-9
       = f.submit "Сохранить", class: "btn btn-primary"

@@ -32,6 +32,7 @@
     %th.td-18
       = content_tag(:span, "АК", title: "Пользователь прошел активацию")
     %th.td-18
+    %th.td-18
 
 
   - for user in @users do
@@ -63,6 +64,8 @@
           = content_tag(:i, "", class: "fa fa-check-square pointer", title: "Пользователь прошел активацию")
         - else
           = content_tag(:i, "", class: "fa fa-clock-o pointer", title: "Пользователь ожидает активации")
+      %td
+        = icon("fa fa-check-square pointer", "Менеджер", "color: green") if user.manager == 1
       %td
         = delete_link [:admin, user]
 

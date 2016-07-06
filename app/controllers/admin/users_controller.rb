@@ -46,7 +46,7 @@ class Admin::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :phone, :password, :password_confirmation, :age, :responsibility_id, :city_id, :congregation_id)
+    params.require(:user).permit(:manager, :first_name, :last_name, :email, :phone, :password, :password_confirmation, :age, :responsibility_id, :city_id, :congregation_id)
   end
 
   def load_model
