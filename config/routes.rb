@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :regions
     resources :responsibilities
     resources :congregations
+    resources :cities
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

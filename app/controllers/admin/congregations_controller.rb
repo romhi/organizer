@@ -6,7 +6,7 @@ class Admin::CongregationsController < ApplicationController
   before_action :load_model, only: [:edit, :update, :destroy]
 
   def index
-    @congregations = Congregation.order("name")
+    @congregations = Congregation.order(:name)
   end
 
   def new

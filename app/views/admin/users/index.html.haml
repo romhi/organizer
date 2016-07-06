@@ -49,15 +49,15 @@
       %td
         = user.age
       %td
-        = user.responsibility_id
+        = user.responsibility.try(:name) || "Не определено"
       %td.td-center
         = user.email
       %td
         = user.phone
       %td
-        = user.city_id
+        = user.congregation.try(:city).try(:name) || "Не определено"
       %td
-        = user.congregation_id
+        = user.congregation.try(:name) || "Не определено"
       %td
         - if user.confirmed_at
           = content_tag(:i, "", class: "fa fa-check-square pointer", title: "Пользователь прошел активацию")

@@ -16,16 +16,18 @@
                 %li= link_to "Области", admin_regions_path
                 %li= link_to "Назначения", admin_responsibilities_path
                 %li= link_to "Собрания", admin_congregations_path
+                %li= link_to "Города", admin_cities_path
           %li.dropdown
             = link_to "#", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
               Справочники
               %b.caret
             %ul.dropdown-menu
-              %li= link_to "Города", cities_path
+
               %li= link_to "1", "#"
               %li= link_to "2", "#"
               %li= link_to "3 валют", "#"
               %li= link_to "4", "#"
+              %li= link_to "Города", cities_path
 
       = render :partial => "layouts/user_bar"
 
