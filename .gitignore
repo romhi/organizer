@@ -15,7 +15,6 @@ tmp/**/*
 
 # config files
 
-/config/deploy.rb
 /config/deploy/staging.rb
 /config/secrets.yml
 /config/mainsms.yml
