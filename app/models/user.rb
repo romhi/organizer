@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   belongs_to :responsibility
   belongs_to :city
   belongs_to :congregation
+  validates_presence_of :first_name, :last_name, :email, :phone
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

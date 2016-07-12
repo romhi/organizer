@@ -6,7 +6,6 @@
       = f.input :email, label: "Email", required: true, autofocus: true
       = f.input :first_name, label: "Имя", required: true
       = f.input :last_name, label: "Фамилия", required: true
-      = f.input :age, label: "Возраст", required: true
       = f.input :phone, label: "Телефон", required: true
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %p
