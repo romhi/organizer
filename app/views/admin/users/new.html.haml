@@ -1,16 +1,15 @@
-%h1 Новый пользователь
+%h1 Добавить пользователя
 
-= simple_form_for [:admin, @user], :html => { :id => "user_form", :class => 'form-horizontal', :role => "form" },
-  wrapper: :horizontal_form, wrapper_mappings: { check_boxes: :horizontal_radio_and_checkboxes, radio_buttons: :horizontal_radio_and_checkboxes, file: :horizontal_file_input, boolean: :horizontal_boolean } do |f|
-  = f.input :email, label: "EMAIL"
+= simple_form_for [:admin, @user], :html => { :id => "user_form", :class => 'vertical-forml', :role => "form" } do |f|
+  = f.input :last_name, label: "Фамилия", autofocus: true
   = f.input :first_name, label: "Имя"
-  = f.input :last_name, label: "Фамилия"
+  = f.input :phone, label: "Телефон"
+  = f.input :email, label: "EMAIL"
   = f.input :password, label: "Пароль"
   = f.input :password_confirmation, label: "Подтверждение пароль"
-  .form-group
-    .col-sm-offset-3.col-sm-9
-      = f.submit "Сохранить", class: "btn btn-primary"
-      = link_to "Отмена", admin_users_path, class: "btn btn-default"
+
+  = f.submit "Сохранить", class: "btn btn-primary"
+  = link_to "Отмена", admin_users_path, class: "btn btn-default"
 
 
 :javascript
