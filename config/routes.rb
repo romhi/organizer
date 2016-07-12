@@ -18,12 +18,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'welcome#index'
 
+  namespace :manager do
+    resources :volunteers
+  end
+
   namespace :admin do
     resources :users
     resources :regions
     resources :responsibilities
     resources :congregations
     resources :cities
+    resources :volunteers
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -31,6 +31,8 @@ class Ability
     if user
       if user.admin
         can :manage, :all
+      elsif user.manager == 1
+        can [:index, :new, :create, :update, :destroy, :edit], Volunteer
       else
         can [:index], City
       end

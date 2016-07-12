@@ -1,4 +1,4 @@
-class Manager::VolunteersController < ApplicationController
+class Admin::VolunteersController < ApplicationController
 
   before_filter :authenticate_user!
   authorize_resource
@@ -55,4 +55,6 @@ class Manager::VolunteersController < ApplicationController
     @volunteer = Volunteer.find params[:id]
   end
 
+
 end
+
