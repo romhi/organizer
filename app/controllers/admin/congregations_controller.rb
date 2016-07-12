@@ -16,7 +16,7 @@ class Admin::CongregationsController < ApplicationController
   def create
     @congregation = Congregation.new congregation_params
     if @congregation.save
-      redirect_to admin_congregations_path, notice: "Регион успешно создан!"
+      redirect_to admin_congregations_path, notice: "Собрание успешно создано!"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::CongregationsController < ApplicationController
 
   def update
     if @congregation.update congregation_params
-      redirect_to admin_congregations_path, notice: "Регион успешно обновлен!"
+      redirect_to admin_congregations_path, notice: "Собрание успешно обновлено!"
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::CongregationsController < ApplicationController
 
   def destroy
     @congregation.destroy
-    redirect_to admin_congregations_path
+    redirect_to admin_congregations_pathб notice: "Собрание успешно удалено!"
   end
 
   private

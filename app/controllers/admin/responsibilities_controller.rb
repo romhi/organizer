@@ -16,7 +16,7 @@ class Admin::ResponsibilitiesController < ApplicationController
   def create
     @responsibility = Responsibility.new responsibility_params
     if @responsibility.save
-      redirect_to admin_responsibilities_path, notice: "Регион успешно создан!"
+      redirect_to admin_responsibilities_path, notice: "Назначение успешно создано!"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::ResponsibilitiesController < ApplicationController
 
   def update
     if @region.update responsibility_params
-      redirect_to admin_responsibilities_path, notice: "Регион успешно обновлен!"
+      redirect_to admin_responsibilities_path, notice: "Назначение успешно обновлено!"
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::ResponsibilitiesController < ApplicationController
 
   def destroy
     @responsibility.destroy
-    redirect_to admin_responsibilities_path
+    redirect_to admin_responsibilities_path, notice: "Назначение успешно удалено!"
   end
 
   private
