@@ -18,4 +18,12 @@ class User < ActiveRecord::Base
     Thread.current[:current_user] = user
   end
 
+  def admin?
+    admin
+  end
+
+  def manager?
+    manager == 1
+  end
+
 end

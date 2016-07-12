@@ -16,7 +16,7 @@ class Admin::CitiesController < ApplicationController
   def create
     @city = City.new city_params
     if @city.save
-      redirect_to admin_cities_path, notice: "Город успешно создан!"
+      redirect_to admin_cities_path, notice: "Город успешно добавлен!"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::CitiesController < ApplicationController
   end
 
   def update
-    if @city.update congregation_params
+    if @city.update city_params
       redirect_to admin_cities_path, notice: "Город успешно обновлен!"
     else
       render :edit
@@ -35,7 +35,7 @@ class Admin::CitiesController < ApplicationController
 
   def destroy
     @city.destroy
-    redirect_to admin_cities_path, notice: "Город успешно удален"
+    redirect_to admin_cities_path, notice: "Город успешно удален!"
   end
 
   private

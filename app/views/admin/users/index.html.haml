@@ -9,10 +9,8 @@
 %table.table.table-bordered
   %tr
     %th.td-18
+      \#
     %th.td-18
-      ID
-    %th
-      Роли
     %th
       Фамилия
     %th
@@ -26,19 +24,17 @@
     %th
       Собрание
     %th.td-18
+      Роль
+    %th.td-18
       = content_tag(:span, "АК", title: "Пользователь прошел активацию")
     %th.td-18
-    %th.td-18
 
-
-  - for user in @users do
+  - @users.each_with_index do |user, index|
     %tr
       %td
+        = index + 1
+      %td
         = edit_link [:edit,:admin , user]
-      %td
-        = user.id
-      %td
-        роль
       %td
         = user.last_name
       %td
@@ -52,12 +48,12 @@
       %td
         = user.congregation.try(:name) || "Не определено"
       %td
+        = role(user)
+      %td
         - if user.confirmed_at
           = content_tag(:i, "", class: "fa fa-check-square pointer", title: "Пользователь прошел активацию")
         - else
           = content_tag(:i, "", class: "fa fa-clock-o pointer", title: "Пользователь ожидает активации")
-      %td
-        = icon("fa fa-check-square pointer", "Менеджер", "color: green") if user.manager == 1
       %td
         = delete_link [:admin, user]
 

@@ -16,7 +16,7 @@ class Admin::RegionsController < ApplicationController
   def create
     @region = Region.new region_params
     if @region.save
-      redirect_to admin_regions_path, notice: "Регион успешно создан!"
+      redirect_to admin_regions_path, notice: "Область успешно добавлена!"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::RegionsController < ApplicationController
 
   def update
     if @region.update region_params
-      redirect_to admin_regions_path, notice: "Регион успешно обновлен!"
+      redirect_to admin_regions_path, notice: "Область успешно обновлена!"
     else
       render :edit
     end
@@ -35,7 +35,7 @@ class Admin::RegionsController < ApplicationController
 
   def destroy
     @region.destroy
-    redirect_to admin_regions_path
+    redirect_to admin_regions_path, notice: "Область успешно удалена!"
   end
 
   private

@@ -16,7 +16,7 @@ class Admin::ResponsibilitiesController < ApplicationController
   def create
     @responsibility = Responsibility.new responsibility_params
     if @responsibility.save
-      redirect_to admin_responsibilities_path, notice: "Назначение успешно создано!"
+      redirect_to admin_responsibilities_path, notice: "Назначение успешно добавлено!"
     else
       render :new
     end
@@ -27,7 +27,7 @@ class Admin::ResponsibilitiesController < ApplicationController
 
   def update
     if @region.update responsibility_params
-      redirect_to admin_responsibilities_path, notice: "Назначение успешно обновлено!"
+      redirect_to admin_responsibilities_path, notice: "Назначение успешно отредактировано!"
     else
       render :edit
     end
