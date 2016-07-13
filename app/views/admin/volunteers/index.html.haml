@@ -9,44 +9,44 @@
 %table.table.table-bordered
   %tr
     %th.td-18
+      \#
+    %th.td-18
     %th
       Город
     %th
       Собрание
     %th
-      Фамилия
+      ФИ
     %th
-      Имя
+      Лет
     %th
-      Возраст
+      Назн
+
     %th
-      Назначение
+      Может с
     %th
-      Время и место служения
+      Может до
     %th
-      Время начала служения
+      08
     %th
-      Время окончания служения
+      17
     %th
-      Приедет в 8:00
+      УЛ
     %th
-      Останется до 17:00
-    %th
-      Может на улице
-    %th
-      Автомобилист
-    %th
-      Отдел
+      Авто
     %th
       Телефон
     %th
       EMAIL
     %th
       Комментарии
+    %th
+      Время и место служения
     %th.td-18
-
-  - for volunteer in @volunteers do
+  - @volunteers.each_with_index do |volunteer, index|
     %tr
+      %td
+        = index + 1
       %td
         = edit_link [:edit,:admin , volunteer]
       %td
@@ -54,19 +54,16 @@
       %td
         = volunteer.congregation.name
       %td
-        = volunteer.last_name
-      %td
-        = volunteer.first_name
+        #{volunteer.last_name} #{volunteer.first_name}
       %td
         = volunteer.age
       %td
         = volunteer.responsibility.name
+
       %td
-        = volunteer.service_time_id
+        = volunteer.convenient_start_time.strftime("%H:%M")
       %td
-        = volunteer.convenient_start_time
-      %td
-        = volunteer.convenient_end_time
+        = volunteer.convenient_end_time.strftime("%H:%M")
       %td
         = volunteer.will_be_since_8
       %td
@@ -76,13 +73,13 @@
       %td
         = volunteer.car
       %td
-        = volunteer.service_id
-      %td
         = volunteer.phone
       %td
         = volunteer.email
       %td
         = volunteer.comment
+      %td
+        = volunteer.service_time_id
       %td
         = delete_link [:admin, volunteer]
 

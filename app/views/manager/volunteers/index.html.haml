@@ -1,72 +1,60 @@
 .top-right-actions
-  = simple_form_for :volunteer, url: "/admin/volunteers", method: :get, html: { style: "display: inline-block;", class: "form-inline" } do |f|
+  = simple_form_for :volunteer, url: "/manager/volunteers", method: :get, html: { style: "display: inline-block;", class: "form-inline" } do |f|
     = f.input :part, label: false, input_html: { name: "part", value: "#{params[:part]}" }
     = f.submit "Найти", class: "btn btn-default"
-  = link_to "Добавить", new_admin_volunteer_path, class: "btn btn-primary"
+  = link_to "Добавить", new_manager_volunteer_path, class: "btn btn-primary"
 
-%h1 Добровольцы (#{@volunteers.count})
+%h1 Добровольцы собрания #{current_user.congregation.name} (#{@volunteers.count})
 
 %table.table.table-bordered
   %tr
     %th.td-18
+      \#
+    %th.td-18
     %th
-      Город
+      ФИ
     %th
-      Собрание
+      Лет
     %th
-      Фамилия
+      Назн
     %th
-      Имя
+      Может с
     %th
-      Возраст
+      Может до
     %th
-      Назначение
+      08
     %th
-      Время и место служения
+      17
     %th
-      Время начала служения
+      УЛ
     %th
-      Время окончания служения
-    %th
-      Приедет в 8:00
-    %th
-      Останется до 17:00
-    %th
-      Может на улице
-    %th
-      Автомобилист
-    %th
-      Отдел
+      Авто
     %th
       Телефон
     %th
       EMAIL
     %th
       Комментарии
+    %th
+      Время и место служения
     %th.td-18
-
-  - for volunteer in @volunteers do
+  - @volunteers.each_with_index do |volunteer, index|
     %tr
       %td
-        = edit_link [:edit,:admin , volunteer]
+        = index + 1
       %td
-        = volunteer.congregation.city.name
+        = edit_link [:edit,:manager , volunteer]
       %td
-        = volunteer.congregation.name
-      %td
-        = volunteer.last_name
-      %td
-        = volunteer.first_name
+        #{volunteer.last_name} #{volunteer.first_name}
       %td
         = volunteer.age
       %td
         = volunteer.responsibility.name
+
       %td
-        = volunteer.service_time_id
+        = volunteer.convenient_start_time.strftime("%H:%M")
       %td
-        = volunteer.convenient_start_time
-      %td
-        = volunteer.convenient_end_time
+        = volunteer.convenient_end_time.strftime("%H:%M")
       %td
         = volunteer.will_be_since_8
       %td
@@ -76,14 +64,14 @@
       %td
         = volunteer.car
       %td
-        = volunteer.service_id
-      %td
         = volunteer.phone
       %td
         = volunteer.email
       %td
         = volunteer.comment
       %td
-        = delete_link [:admin, volunteer]
+        = volunteer.service_time_id
+      %td
+        = delete_link [:manager, volunteer]
 
 
