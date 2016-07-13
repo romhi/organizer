@@ -17,5 +17,6 @@
 //= require bootstrap/dropdown
 //= require turbolinks
 //= require maskedinput
+//= require moment
 //= require_tree .
 

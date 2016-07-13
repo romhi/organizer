@@ -34,7 +34,7 @@ gem 'will_paginate-bootstrap'
 gem "font-awesome-rails", '4.2.0.0'
 gem 'maskedinput-rails'
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
