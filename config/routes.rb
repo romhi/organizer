@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :responsibilities
     resources :congregations
     resources :cities
+    resources :vacancies
     resources :volunteers
   end
   # Example of regular route:

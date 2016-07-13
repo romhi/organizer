@@ -1,9 +1,13 @@
 module UsersHelper
 
   def role(user)
-    "Админ" if user.admin?
-    "Менеджер" if user.manager?
-    "Нет" unless user.admin? and user.manager?
+     if user.admin?
+       "Админ"
+     elsif user.manager?
+      "Менеджер"
+     else
+      "Нет"
+     end
   end
 
 end
