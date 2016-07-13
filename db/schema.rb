@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706102713) do
+ActiveRecord::Schema.define(version: 20160713110321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,8 +86,6 @@ ActiveRecord::Schema.define(version: 20160706102713) do
     t.string   "email"
     t.integer  "congregation_id"
     t.integer  "service_time_id"
-    t.string   "convenient_start_time"
-    t.string   "convenient_end_time"
     t.integer  "will_be_since_8"
     t.integer  "will_be_until_17"
     t.integer  "outdoor"
@@ -96,6 +94,8 @@ ActiveRecord::Schema.define(version: 20160706102713) do
     t.text     "comment"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.datetime "convenient_start_time"
+    t.datetime "convenient_end_time"
   end
 
 end
