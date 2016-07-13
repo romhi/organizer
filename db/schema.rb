@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20160713154805) do
     t.string   "phone"
     t.string   "email"
     t.integer  "congregation_id"
-    t.integer  "volunteer_id"
+    t.integer  "vacancy_id"
     t.integer  "will_be_since_8"
     t.integer  "will_be_until_17"
     t.integer  "outdoor"
