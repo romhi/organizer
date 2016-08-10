@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   namespace :manager do
     resources :volunteers
     resources :documents
+    resources :welcome
   end
 
   namespace :admin do

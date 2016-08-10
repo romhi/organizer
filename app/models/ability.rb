@@ -34,6 +34,7 @@ class Ability
       elsif user.manager == 1
         can [:index, :new, :create, :update, :destroy, :edit], Volunteer
         can [:index, :show], Document
+        can [:index], :welcome
       else
         can [:index], City
       end

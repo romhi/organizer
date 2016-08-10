@@ -33,4 +33,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def after_sign_in_path_for(resource)
+    (current_user.try(:manager).to_i == 1 or current_user.try(:admin)) ? manager_welcome_index_path : root_path
+  end
+
 end
