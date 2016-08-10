@@ -5,7 +5,7 @@
     = f.input :congregation_id, label: false, collection: Congregation.order(:name), label_method: :full_info, value_method: :id, include_blank: "<ВЫБРАТЬ ГОРОД>", selected: @congregation_id
     = f.input :part, label: false, input_html: { value: "#{@part}" }
     = f.submit "Найти", class: "btn btn-default"
-  = link_to "Добавить", new_admin_volunteer_path, class: "btn btn-primary"
+
 
 %h1 Добровольцы (#{@volunteers.count})
 
@@ -86,4 +86,4 @@
       %td
         = delete_link [:admin, volunteer]
 
-
+= link_to "Добавить", new_admin_volunteer_path, class: "btn btn-primary"
