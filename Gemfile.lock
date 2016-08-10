@@ -47,6 +47,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    bootstrap-wysihtml5-rails (0.3.3.8)
+      railties (>= 3.0)
     builder (3.2.2)
     cancan (1.6.10)
     capistrano (3.6.0)
@@ -233,6 +235,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass (~> 3.3.4)
+  bootstrap-wysihtml5-rails
   cancan
   capistrano (~> 3.4)
   capistrano-rails

@@ -27,6 +27,7 @@ gem 'haml', '~> 4.0.5'
 gem 'country_select'
 gem 'sass-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-wysihtml5-rails'
 gem 'devise'
 gem "cancan"
 gem 'jquery-turbolinks'

@@ -17,5 +17,6 @@
 //= require bootstrap/dropdown
 //= require turbolinks
 //= require maskedinput
+//= require bootstrap-wysihtml5
 //= require_tree .
 

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   namespace :manager do
     resources :volunteers
+    resources :documents
   end
 
   namespace :admin do
@@ -27,6 +28,7 @@ Rails.application.routes.draw do
     resources :regions
     resources :responsibilities
     resources :congregations
+    resources :documents
     resources :cities
     resources :vacancies do
       collection do
