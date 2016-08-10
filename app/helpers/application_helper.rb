@@ -100,5 +100,17 @@ module ApplicationHelper
     content_tag(:p, data.html_safe, class: 'form-control-static').html_safe
   end
 
+  def confirm_status(user)
+    if user.confirmed_at
+      icon("fa fa-check-square pointer", "Пользователь прошел активацию", "color: green")
+    else
+      icon("fa fa-clock-o pointer", "Пользователь ожидает активации", "color: brown")
+    end
+  end
+
+  def yes_or_no_icon(n)
+    n == 1 ? icon("fa fa-check-square pointer", nil, "color: green") : icon("fa fa-minus-square pointer", nil, "color: red")
+  end
+
 end
 

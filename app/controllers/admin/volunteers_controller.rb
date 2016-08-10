@@ -6,8 +6,19 @@ class Admin::VolunteersController < ApplicationController
   before_filter :load_model, only: [:edit, :show, :update, :destroy]
 
   def index
-    scope = Volunteer.all
-    scope = scope.where("email ilike :part or first_name ilike :part or last_name ilike :part or phone ilike :part", part: "%#{params[:part]}%") if params[:part].present?
+    scope = Volunteer.joins(:congregation)
+    @part, @order, @congregation_id, @vacancy = nil, nil, nil, nil
+    if params[:volunteer]
+      @part = params[:volunteer][:part]
+      @order = params[:volunteer][:order]
+      @congregation_id = params[:volunteer][:congregation_id]
+      @vacancy = params[:volunteer][:vacancy]
+      scope = scope.where("email ilike :part or first_name ilike :part or last_name ilike :part or phone ilike :part", part: "%#{@part}%") if @part.present?
+      scope = scope.where("congregation_id = ?", @congregation_id) if @congregation_id.present?
+      scope = scope.where("vacancy_id is null") if @vacancy == 2
+      scope = scope.where("vacancy_id is not null") if @vacancy == 1
+      scope = scope.order("#{@order}") if @order.present?
+    end
     @volunteers = scope.paginate(page: params[:page], per_page: 10)
   end
 

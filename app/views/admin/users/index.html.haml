@@ -50,10 +50,7 @@
       %td
         = role(user)
       %td
-        - if user.confirmed_at
-          = content_tag(:i, "", class: "fa fa-check-square pointer", title: "Пользователь прошел активацию")
-        - else
-          = content_tag(:i, "", class: "fa fa-clock-o pointer", title: "Пользователь ожидает активации")
+        = confirm_status(user)
       %td
         = delete_link [:admin, user]
 

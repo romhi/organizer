@@ -1,6 +1,9 @@
 .top-right-actions
   = simple_form_for :volunteer, url: "/admin/volunteers", method: :get, html: { style: "display: inline-block;", class: "form-inline" } do |f|
-    = f.input :part, label: false, input_html: { name: "part", value: "#{params[:part]}" }
+    = f.input :vacancy, label: false, collection: {"ВСЕ": nil, "С НАЗНАЧЕНИЕМ": 1, "БЕЗ НАЗНАЧЕНИЯ": 2}, include_blank: false, selected: @vacancy
+    = f.input :order, label: false, collection: [["ПО ФАМИЛИИ", "last_name"], ["ПО СОБРАНИЮ", "congregations.name"]], include_blank: false, selected: @order
+    = f.input :congregation_id, label: false, collection: Congregation.order(:name), label_method: :full_info, value_method: :id, include_blank: "<ВЫБРАТЬ ГОРОД>", selected: @congregation_id
+    = f.input :part, label: false, input_html: { value: "#{@part}" }
     = f.submit "Найти", class: "btn btn-default"
   = link_to "Добавить", new_admin_volunteer_path, class: "btn btn-primary"
 
@@ -33,7 +36,7 @@
     %th
       УЛ
     %th
-      Авто
+      Авт
     %th
       Телефон
     %th
@@ -64,14 +67,14 @@
         = volunteer.convenient_start_time.strftime("%H:%M")
       %td
         = volunteer.convenient_end_time.strftime("%H:%M")
-      %td
-        = volunteer.will_be_since_8
-      %td
-        = volunteer.will_be_until_17
-      %td
-        = volunteer.outdoor
-      %td
-        = volunteer.car
+      %td.td-center.pointer(title="Будет к 8:00")
+        = yes_or_no_icon(volunteer.will_be_since_8)
+      %td.td-center.pointer(title="Будет до 17:00")
+        = yes_or_no_icon(volunteer.will_be_until_17)
+      %td.td-center.pointer(title="Может на улице")
+        = yes_or_no_icon(volunteer.outdoor)
+      %td.td-center.pointer(title="Автомобилист")
+        = yes_or_no_icon(volunteer.car)
       %td
         = volunteer.phone
       %td
