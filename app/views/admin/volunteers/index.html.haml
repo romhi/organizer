@@ -15,20 +15,9 @@
       \#
     %th.td-18
     %th
-      Город
+      Сведения
     %th
-      Собрание
-    %th
-      ФИ
-    %th
-      Лет
-    %th
-      Назн
-
-    %th
-      Может с
-    %th
-      Может до
+      Время
     %th
       08
     %th
@@ -53,20 +42,9 @@
       %td
         = edit_link [:edit,:admin , volunteer]
       %td
-        = volunteer.congregation.city.name
-      %td
-        = volunteer.congregation.name
-      %td
-        #{volunteer.last_name} #{volunteer.first_name}
-      %td
-        = volunteer.age
-      %td
-        = volunteer.responsibility.name
-
-      %td
-        = volunteer.convenient_start_time.strftime("%H:%M")
-      %td
-        = volunteer.convenient_end_time.strftime("%H:%M")
+        = volunteer.full_info
+      %td.td-nowrap
+        = convenient_time(volunteer)
       %td.td-center.pointer(title="Будет к 8:00")
         = yes_or_no_icon(volunteer.will_be_since_8)
       %td.td-center.pointer(title="Будет до 17:00")
@@ -75,7 +53,7 @@
         = yes_or_no_icon(volunteer.outdoor)
       %td.td-center.pointer(title="Автомобилист")
         = yes_or_no_icon(volunteer.car)
-      %td
+      %td.td-nowrap
         = volunteer.phone
       %td
         = volunteer.email

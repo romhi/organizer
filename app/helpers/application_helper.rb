@@ -112,5 +112,9 @@ module ApplicationHelper
     n == 1 ? icon("fa fa-check-square pointer", nil, "color: green") : icon("fa fa-minus-square pointer", nil, "color: red")
   end
 
+  def convenient_time(volunteer)
+    "#{volunteer.convenient_start_time.strftime("%H:%M")}-#{volunteer.convenient_start_time.strftime("%H:%M")}"
+  end
+
 end
 

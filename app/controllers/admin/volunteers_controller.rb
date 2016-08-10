@@ -15,8 +15,8 @@ class Admin::VolunteersController < ApplicationController
       @vacancy = params[:volunteer][:vacancy]
       scope = scope.where("email ilike :part or first_name ilike :part or last_name ilike :part or phone ilike :part", part: "%#{@part}%") if @part.present?
       scope = scope.where("congregation_id = ?", @congregation_id) if @congregation_id.present?
-      scope = scope.where("vacancy_id is null") if @vacancy == 2
-      scope = scope.where("vacancy_id is not null") if @vacancy == 1
+      scope = scope.where("vacancy_id is null") if @vacancy == "2"
+      scope = scope.where("vacancy_id is not null") if @vacancy == "1"
       scope = scope.order("#{@order}") if @order.present?
     end
     @volunteers = scope.paginate(page: params[:page], per_page: 10)
