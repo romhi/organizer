@@ -38,6 +38,10 @@ class Admin::VacanciesController < ApplicationController
     redirect_to admin_vacancies_path notice: "Вакансия удалена!"
   end
 
+  def managing
+    @vacancies = Vacancy.order(:name)
+  end
+
   private
 
   def load_model
