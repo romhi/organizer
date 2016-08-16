@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   belongs_to :city
   belongs_to :congregation
   validates_presence_of :first_name, :last_name, :email, :phone
+  scope :managers, ->{ where("manager = 1").order(:first_name)}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -24,6 +25,14 @@ class User < ActiveRecord::Base
 
   def manager?
     manager == 1
+  end
+
+  def full_info
+    "#{congregation.city.region.name[0]}.обл. #{city_and_congregation} #{last_name.strip} #{first_name[0]}"
+  end
+
+  def city_and_congregation
+    congregation.city.name == congregation.name ? "#{congregation.name}" : "#{congregation.city.name} #{congregation.name}"
   end
 
 end

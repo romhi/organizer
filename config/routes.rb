@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :volunteers
     resources :documents
     resources :welcome
+    resources :messages
   end
 
   namespace :admin do
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
     resources :congregations
     resources :documents
     resources :cities
+    resources :messages
     resources :vacancies do
       collection do
         get "managing"
